@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <!-- this is for the instructions card in the home page -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+  <link rel="manifest" href="manifest.json">
+
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
 </head>
   <body>
@@ -25,7 +33,12 @@
   });
 }
 </script> 
-<link rel="manifest" href="manifest.json">
+
+
+<!-- this is the part where I tell the user to feel free to give the app their location because we will not sell their data or profit out of their data -->
+
+
+
 
 <script>
   self.addEventListener('install', function(event) {
@@ -56,7 +69,27 @@
       }
       
       </style>
-  <p>Instructions</p> 
+<!-- this is for the first screen where the user will be able to read the instructions -->
+<center>
+ <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Instructions</h5>
+    <p class="card-text">You can get around the city without any issues and this app shows where you have been, as long as you have the app working, that way you are able to track back your steps and be able to get to the destination where you came from in the begging. This is done by going to the Location tab and pressing on the button enable location. Once you have done that you may go to the map tab to see your location be placed in a map. If you feel unsafe you can go to a local police station to get help. These are indicated as blue dots, and you can tell what neighborhoods to avoid if there are a lot of green dots in a single location. This represents the crimes that were recorded to take in that place. Safe Travels!</p>
+  </div>
+</div>
+</center>
+
+<!-- this is for the second screen which is the screen that get's the user's location and it also mentions that their location data is only used within the app and that their data is destoryed when they close / exit the app -->
+  <center>
+
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Hello There</h5>
+    <p class="card-text">We don't sell or store your storage location on other devices or applications. Once you have exited the app the data accomulated is destroyed. Reloading the app will also cause for your data to be deleted. So feel free to press on that allow location button</p>
+  </div>
+</div>
+
+</center>
 </div>
 </main>
 <!-- this is for the users to go to differnet screens -->
@@ -85,7 +118,7 @@
   <div class="mdc-drawer-scrim"></div>
   <div>Main Content</div>
 
-  <!-- this is for the map part I am goign to work on it parts, first taking the user's location -->
+  <!-- this is for the map part A.K.A. the third screen I am goign to work on it parts, first taking the user's location -->
   
 <div id="googleMap" style="width:100%;height:400px;"></div>
  <div id="currentLocation">
@@ -110,16 +143,7 @@ if (navigator.geolocation) {
 //for drawing circles
 
 console.log("hello");
-// const cityCircle = new google.maps.Circle({
-//       strokeColor: "#FF0000",
-//       strokeOpacity: 0.8,
-//       strokeWeight: 2,
-//       fillColor: "#FF0000",
-//       fillOpacity: 0.35,
-//       map,
-//       center: new google.maps.LatLng(41.931293499999995,-87.766255),
-//       radius: 60,
-//     });
+
 }
 console.log("goodbye")
 
@@ -145,7 +169,37 @@ function showPosition(position) {
 }
 </script>
 
+<!-- The fourth screen the about me page -->
+<center>
+            <h5 class="card-title">Goal</h5>
+                  <p class="card-text">For this project, I built a Single-Page App that allows users to see their location on a map that shows locations where they can get help if there is any conflict and what places of the city to avoid if they want to feel secure. </p>
+            <div class="card" style="width: 18rem;">
+              
+              <div class="card-body">
+                <h5 class="card-title">Abraham Morales Arroyo</h5>
+                
+                <p class="card-text">He is a softmore at the University of Illinois at UIC and he is currently enrolled in IT 202. Want to get to know me better? Click on my personal page to do so.</p>
+                
+                <a href="https://abraham-moraes-arroyo.github.io/" class="btn btn-primary">Personal Page</a>
+              </div>
+            </div>
+          </center>
+
+<!-- this is for the about screen  -->
+<!-- this is what makes the map work this is where the api key is dropped -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLUf62RCvErgmFdYnI8TMcBn9MoNcYcCU&callback=myMap"></script>
 
+
+
+ <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
   </body>
 </html>
