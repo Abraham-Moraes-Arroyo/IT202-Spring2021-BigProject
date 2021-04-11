@@ -44,6 +44,7 @@
   self.addEventListener('install', function(event) {
   // Perform install steps
 });
+// <!-- this is the part where the nav bar is going to be placed on the top of the page, I still need to figure out the part where the user clicks on the drawer and is able to get to the other screens of the app. -->
 </script>
     <script src="script.js"></script>
     <header class="mdc-top-app-bar">
@@ -54,7 +55,7 @@
     </section>
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
       <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
-      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+      
       <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
     </section>
   </div>
@@ -69,7 +70,70 @@
       }
       
       </style>
+
+<!-- this is to get the user's name -->
+      <center> 
+<div class="card" style="width: 18rem;">
+  <!-- drop the question here: -->
+      <h5 class="card-title">Hello what is your namne?</h5>
+
+  <label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+    <span class="mdc-text-field__ripple"></span>
+    <input class="mdc-text-field__input" type="text" placeholder="Enter your name" aria-label="Label" id="userInput">
+    <span class="mdc-line-ripple"></span>
+  </label>
+  <!--The button part of the assignment  -->
+    <button id="save" class="mdc-button mdc-button--raised">Enter</button>
+<!-- the Snackbar part of the assignment -->
+    <div class="mdc-snackbar">
+      <div class="mdc-snackbar__surface" role="status" aria-relevant="additions">
+        <div class="mdc-snackbar__label" aria-atomic="false">
+          Can't send photo. Retry in 5 seconds.
+        </div>
+        <div class="mdc-snackbar__actions" aria-atomic="true">
+          <button type="button" class="mdc-button mdc-snackbar__action">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">Retry</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include Dexie -->
+      <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script>
+
+     let snackbar = mdc.snackbar.MDCSnackbar.attachTo(document.querySelector('.mdc-snackbar'));
+
+
+    // Define your database
+
+    var db = new Dexie("app_db");
+    db.version(1).stores({
+        names: 'name'
+    });
+
+
+      document.querySelector("#save").addEventListener("click", (e) => {
+        let value = document.querySelector("input").value;
+        db.names.put({name: value, date: new Date()})
+          .then ( (item) => {
+
+              snackbar.labelText = "Hello "+ value ;
+              snackbar.open();
+
+          });
+      }); 
+
+
+    </script>
+  
+</div>
+
+
+      </center>
 <!-- this is for the first screen where the user will be able to read the instructions -->
+
 <center>
  <div class="card" style="width: 18rem;">
   <div class="card-body">
