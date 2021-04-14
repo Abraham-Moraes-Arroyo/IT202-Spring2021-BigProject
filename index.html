@@ -1,27 +1,35 @@
-<!DOCTYPE html>
 <html>
-  <head>
-  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-  <!-- these are the drawer icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<!-- this is for the instructions card in the home page -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
-  <link rel="manifest" href="manifest.json">
 
- <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js">
+	</script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<!-- This is to hide the template for the search section CARDS -->
+	<style>
+		.template {
+			display: none;
+		}
+	</style>
 
-</head>
-  <body>
+	<!-- for the screnes` -->
+	<style>
+		.screen {
+			display: none;
+		}
 
-          <!-- this is for the web manifest -->
-<script>
-  if ('serviceWorker' in navigator) {
+		body {
+			margin: 0;
+		}
+	</style>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+
+	<!-- this is for the web manifest -->
+	<script>
+		if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/sw.js').then(function(registration) {
       // Registration was successful
@@ -32,50 +40,62 @@
     });
   });
 }
-</script> 
-
-
-<!-- this is the part where I tell the user to feel free to give the app their location because we will not sell their data or profit out of their data -->
-
-
-
-
-<script>
-  self.addEventListener('install', function(event) {
+	</script>
+	<script>
+		self.addEventListener('install', function(event) {
   // Perform install steps
 });
-// <!-- this is the part where the nav bar is going to be placed on the top of the page, I still need to figure out the part where the user clicks on the drawer and is able to get to the other screens of the app. -->
-</script>
-    <script src="script.js"></script>
-    <header class="mdc-top-app-bar">
-  <div class="mdc-top-app-bar__row">
-    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-      <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
-      <span class="mdc-top-app-bar__title">safe and sound</span>
+	</script>
+
+</head>
+
+<body>
+	<header class="mdc-top-app-bar">
+		<div class="mdc-top-app-bar__row">
+			<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+				<button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+      <span class="mdc-top-app-bar__title">Safe and Sound</span>
     </section>
-    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+    <!-- don't need the following -->
+    <!-- <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
       <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
-      
+      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
       <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
-    </section>
+    </section> -->
   </div>
 </header>
-<main class="mdc-top-app-bar--fixed-adjust">
-  <div class="mdc-card">
-    <!-- this is the style for the card that contains the instructions -->
-    <style>
-      .my-card-content {
-      padding: 56px;
-      font-family: "Trirong", serif;
-      }
-      
-      </style>
+ 
+  <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list">
+        <a class="mdc-list-item mdc-list-item--activated" href="#number1" aria-current="page" tabindex="0" aria-selected="true">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
+          <span class="mdc-list-item__text">Home page</span>
+          
+        </a>
+        <a class="mdc-list-item" href="#number2" tabindex="-1" aria-selected="false">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
+          <span class="mdc-list-item__text">Personal Safety</span>
+        </a>
+        <a class="mdc-list-item" href="#number3" tabindex="-1" aria-selected="false">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+          <span class="mdc-list-item__text">About me </span>
+        </a>
+      </nav>
+    </div>
+  </aside>
 
-<!-- this is to get the user's name -->
-      <center> 
-<div class="card" style="width: 18rem;">
+  <div class="mdc-drawer-scrim"></div>
+  <main class="mdc-top-app-bar--fixed-adjust">
+    <!-- where all of my divs/ screens are going to be -->
+    <div id="number1" class="screen">
+      <!-- code dump from the first screen plan -->
+      <div class="card" style="width: 18rem;">
   <!-- drop the question here: -->
-      <h5 class="card-title">Hello what is your namne?</h5>
+      <h5 class="card-title">Hello what is your name?</h5>
 
   <label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
     <span class="mdc-text-field__ripple"></span>
@@ -130,65 +150,28 @@
   
 </div>
 
+    </div>
 
-      </center>
-<!-- this is for the first screen where the user will be able to read the instructions -->
-
-<center>
+<!-- screen number 2 for the project -->
+    <div id="number2" class="screen">
+      <center>
  <div class="card" style="width: 18rem;">
   <div class="card-body">
+  
     <h5 class="card-title">Instructions</h5>
     <p class="card-text">You can get around the city without any issues and this app shows where you have been, as long as you have the app working, that way you are able to track back your steps and be able to get to the destination where you came from in the begging. This is done by going to the Location tab and pressing on the button enable location. Once you have done that you may go to the map tab to see your location be placed in a map. If you feel unsafe you can go to a local police station to get help. These are indicated as blue dots, and you can tell what neighborhoods to avoid if there are a lot of green dots in a single location. This represents the crimes that were recorded to take in that place. Safe Travels!</p>
   </div>
 </div>
 </center>
-
-<!-- this is for the second screen which is the screen that get's the user's location and it also mentions that their location data is only used within the app and that their data is destoryed when they close / exit the app -->
-  <center>
-
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Hello There</h5>
-    <p class="card-text">We don't sell or store your storage location on other devices or applications. Once you have exited the app the data accomulated is destroyed. Reloading the app will also cause for your data to be deleted. So feel free to press on that allow location button</p>
-  </div>
-</div>
-
-</center>
-</div>
-</main>
-<!-- this is for the users to go to differnet screens -->
-  <aside class="mdc-drawer mdc-drawer--modal">
-    <div class="mdc-drawer__content">
-      <nav class="mdc-list">
-        <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page" tabindex="0">
-          <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
-          <span class="mdc-list-item__text">Inbox</span>
-        </a>
-        <a class="mdc-list-item" href="#">
-          <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
-          <span class="mdc-list-item__text">Outgoing</span>
-        </a>
-        <a class="mdc-list-item" href="#">
-          <span class="mdc-list-item__ripple"></span>
-          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
-          <span class="mdc-list-item__text">Drafts</span>
-        </a>
-      </nav>
+<!-- end of code dump for  -->
     </div>
-  </aside>
 
-  <div class="mdc-drawer-scrim"></div>
-  <div>Main Content</div>
-
-  <!-- this is for the map part A.K.A. the third screen I am goign to work on it parts, first taking the user's location -->
-  
-<div id="googleMap" style="width:100%;height:400px;"></div>
+    <div id="number3" class="screen">
+     <!-- drop the map code here: -->
+      <div id="googleMap" style="width:100%;height:400px;"></div>
  <div id="currentLocation">
   </div>
 
-  
 <script>
 let map;
 function myMap() {
@@ -207,11 +190,20 @@ if (navigator.geolocation) {
 //for drawing circles
 
 console.log("hello");
-
+// const cityCircle = new google.maps.Circle({
+//       strokeColor: "#FF0000",
+//       strokeOpacity: 0.8,
+//       strokeWeight: 2,
+//       fillColor: "#FF0000",
+//       fillOpacity: 0.35,
+//       map,
+//       center: new google.maps.LatLng(41.931293499999995,-87.766255),
+//       radius: 60,
+//     });
 }
 console.log("goodbye")
 
-// I use the plotting of circles in order to allow the user to track where they have been in order to prevent themselves from going in the same direction over and over again. It is not a bug it's a feature
+
 function showPosition(position) {
   let cityCircle = new google.maps.Circle({
       strokeColor: "#FF0000",
@@ -221,7 +213,7 @@ function showPosition(position) {
       fillOpacity: 0.35,
       map,
       center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude),
-      radius: 60,
+      radius: 30,
     });
     console.log(position.coords.latitude , 
      position.coords.longitude);
@@ -233,37 +225,56 @@ function showPosition(position) {
 }
 </script>
 
-<!-- The fourth screen the about me page -->
-<center>
-            <h5 class="card-title">Goal</h5>
-                  <p class="card-text">For this project, I built a Single-Page App that allows users to see their location on a map that shows locations where they can get help if there is any conflict and what places of the city to avoid if they want to feel secure. </p>
-            <div class="card" style="width: 18rem;">
-              
-              <div class="card-body">
-                <h5 class="card-title">Abraham Morales Arroyo</h5>
-                
-                <p class="card-text">He is a softmore at the University of Illinois at UIC and he is currently enrolled in IT 202. Want to get to know me better? Click on my personal page to do so.</p>
-                
-                <a href="https://abraham-moraes-arroyo.github.io/" class="btn btn-primary">Personal Page</a>
-              </div>
-            </div>
-          </center>
-
-<!-- this is for the about screen  -->
-<!-- this is what makes the map work this is where the api key is dropped -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLUf62RCvErgmFdYnI8TMcBn9MoNcYcCU&callback=myMap"></script>
+    </div>
+  <!-- App content -->
+</main> 
 
 
 
- <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    -->
-  </body>
-</html>
+<script>
+    // mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));  
+
+    const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer')); 
+
+    // Instantiation
+    const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+    // const topAppBar = mdc.top_app_bar.MDCTopAppBar.attachTo(topAppBarElement);
+
+    const listEl = document.querySelector('.mdc-drawer .mdc-list');
+    const mainContentEl = document.querySelector('main');
+
+    listEl.addEventListener('click', (event) => {
+      drawer.open = false;
+    });
+  //when the user clicks on the drawer
+    document.querySelector("header button.mdc-top-app-bar__navigation-icon").addEventListener( "click", (event) => {
+      drawer.open = true;
+
+    })
+
+    document.body.addEventListener('MDCDrawer:closed', (event) => {
+      // mainContentEl.querySelector('input, button').focus();
+    });
+
+    // new 
+    document.querySelectorAll('.mdc-list-item').forEach((element) => {
+      element.addEventListener('click', (event) => {
+      hidescreens();
+       let href= event.target.getAttribute("href");
+       document.querySelector(href).style.display="block";
+    });
+    });
+    
+    let hidescreens =() =>{
+      document.querySelectorAll(".screen").forEach((element) => {
+        element.style.display="none";
+      });
+      
+    }
+  
+  </script>
+  
+</body></html>
