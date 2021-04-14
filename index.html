@@ -1,6 +1,13 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
 	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
 	<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js">
 	</script>
@@ -82,7 +89,12 @@
         <a class="mdc-list-item" href="#number3" tabindex="-1" aria-selected="false">
           <span class="mdc-list-item__ripple"></span>
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
-          <span class="mdc-list-item__text">About me </span>
+          <span class="mdc-list-item__text">Map</span>
+        </a>
+        <a class="mdc-list-item" href="#number4" tabindex="-1" aria-selected="false">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+          <span class="mdc-list-item__text">About Me</span>
         </a>
       </nav>
     </div>
@@ -151,6 +163,27 @@
 </div>
 
     </div>
+  <!-- the about me screen -->
+      <div id="number4" class="screen">
+        <div class="alert alert-primary" role="alert">
+          Wow you took time to see who made the app?!! My hat's off to you
+        </div>
+          <center>
+            <h5 class="card-title">Goal</h5>
+                  <p class="card-text">For this project, I built a Single-Page App that informs the user of the crime data that has occured in the city of Chicago, and around their location, as long as they are in Chicago. User's are also informed about the weater, based on their location. </p>
+            <div class="card" style="width: 18rem;">
+              
+              <div class="card-body">
+                <h5 class="card-title">Abraham Morales Arroyo</h5>
+                
+                <p class="card-text">He is a softmore at the University of Illinois at UIC and he is currently enrolled in IT 202. Want to get to know me better? Click on my personal page to do so.</p>
+                
+                <a href="https://abraham-moraes-arroyo.github.io/" class="btn btn-primary">Personal Page</a>
+              </div>
+            </div>
+          </center>
+      </div>
+
 
 <!-- screen number 2 for the project -->
     <div id="number2" class="screen">
@@ -230,10 +263,6 @@ function showPosition(position) {
   <!-- App content -->
 </main> 
 
-
-
-
-
 <script>
     // mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));  
 
@@ -277,4 +306,9 @@ function showPosition(position) {
   
   </script>
   
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body></html>
