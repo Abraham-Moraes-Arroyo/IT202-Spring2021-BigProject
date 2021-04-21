@@ -78,13 +78,13 @@
         <a class="mdc-list-item mdc-list-item--activated" href="#number1" aria-current="page" tabindex="0" aria-selected="true">
           <span class="mdc-list-item__ripple"></span>
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
-          <span class="mdc-list-item__text">Home page</span>
+          <span class="mdc-list-item__text">Getting to know you</span>
           
         </a>
         <a class="mdc-list-item" href="#number2" tabindex="-1" aria-selected="false">
           <span class="mdc-list-item__ripple"></span>
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
-          <span class="mdc-list-item__text">Personal Safety</span>
+          <span class="mdc-list-item__text">Instructions</span>
         </a>
         <a class="mdc-list-item" href="#number3" tabindex="-1" aria-selected="false">
           <span class="mdc-list-item__ripple"></span>
@@ -175,7 +175,7 @@
         </div>
           <center>
             <h5 class="card-title">Goal</h5>
-                  <p class="card-text">For this project, I built a Single-Page App that informs the user of the crime data that has occured in the city of Chicago, and around their location, as long as they are in Chicago. User's are also informed about the weater, based on their location. </p>
+                  <p class="card-text">For this project, I built a Single-Page App that informs the user of the crime data that has occured in the city of Chicago, and around their location, as long as they are in Chicago. User's are also informed about the weather, based on their location. </p>
             <div class="card" style="width: 18rem;">
               
               <div class="card-body">
@@ -190,38 +190,54 @@
       </div>
 <!-- screen number 5 for the projec the weather screen -->
 <div id="number5" class="screen">
-  <center>
-    <h1>Weather for today (Constantly updated)</h1>
-    <p>City:</p>
+  <div class="mdc-card">
+  <div class="mdc-card__primary-action mdc-typography--headline5"  tabindex="0">
+    <center>
+      <div class="mdc-card mdc-card--outlined">
+    <h1>Current weather</h1>
+    </div>
+    <p class="mdc-typography--headline4">City:</p>
     <p class="name"></p>
-    <p>Temperature in Farenheit:</p>
+    <p class="mdc-typography--headline4">Temperature in Farenheit:</p>
     <p class="temp"></p>
-    <p>Description:</p>
-    <p class="description"></p>
+    <p class="mdc-typography--headline4">Feels like:</p>
+    <p class="feels_like"></p>
+    <p class="mdc-typography--headline4">Description:</p>
+    <p class="description "></p>
+    </center>
 
-    <script>
+  </div>
+  </div>
+  <!-- this is for the weather screen -->
+      <script>
       window.addEventListener('load', (event) => {
 
       var name = document.querySelector('.name');
       var temp = document.querySelector('.temp');
+      var feelstemp =document.querySelector('.feels_like');
       var desc = document.querySelector('.description');
+      //Here I am going to see if I can get the image of the weather
+      var pic = document.querySelector('.icon');
+      
       fetch('https://api.openweathermap.org/data/2.5/weather?q=Chicago&appid=411a18eda248ba90a81d93a611ff246e')
         .then(response => response.json())
         .then(data => {
           var nameValue=data['name'];
           var tempValue =data['main']['temp'];
+          var feelstempValue = data['main']['feels_like'];
           var descValue=data['weather'][0]['description'];
+          
 
           name.innerHTML= nameValue;
-          temp.innerHTML= ((tempValue)-273.15) *( 9/5) +(32)+('F');
+          temp.innerHTML= Math.round((tempValue)-273.15) *( 9/5) +(32)+('F');
+          feelstemp.innerHTML= Math.round((feelstempValue)-273.15)*(9/5)+(32)+('F')
           desc.innerHTML= descValue;
         })
 //(0K − 273.15) × 9/5 + 32
-        
+        // this was done with open weather api key
 
         });
     </script>
-  </center>
 </div>
 
 <!-- screen number 2 for the project -->
@@ -231,7 +247,7 @@
   <div class="card-body">
   
     <h5 class="card-title">Instructions</h5>
-    <p class="card-text">You can get around the city without any issues and this app shows where you have been, as long as you have the app working, that way you are able to track back your steps and be able to get to the destination where you came from in the begging. This is done by going to the Location tab and pressing on the button enable location. Once you have done that you may go to the map tab to see your location be placed in a map. If you feel unsafe you can go to a local police station to get help. These are indicated as blue dots, and you can tell what neighborhoods to avoid if there are a lot of green dots in a single location. This represents the crimes that were recorded to take in that place. Safe Travels!</p>
+    <p class="card-text">Welcome to Safe and Sound. Have you ever wanted to go to a place but not sure what is the safest route to get there, or have you recently planed on moving to the city of Chicago, but not sure what place is the safest for you and or your family? Well you got the right app at your disposal. Based on your location we have plotted the crimes onto a map, and based on your location you are able to see if the place where you are currently are at is either hot in crime or not. Once you have read this make sure to click on the stack icon towards the left of the screen and click on the tab named: "Getting to know you"</p>
   </div>
 </div>
 </center>
