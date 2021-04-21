@@ -96,6 +96,11 @@
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
           <span class="mdc-list-item__text">About Me</span>
         </a>
+        <a class="mdc-list-item" href="#number5" tabindex="-1" aria-selected="false">
+          <span class="mdc-list-item__ripple"></span>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+          <span class="mdc-list-item__text">Current Weather</span>
+        </a>
       </nav>
     </div>
   </aside>
@@ -183,7 +188,41 @@
             </div>
           </center>
       </div>
+<!-- screen number 5 for the projec the weather screen -->
+<div id="number5" class="screen">
+  <center>
+    <h1>Weather for today (Constantly updated)</h1>
+    <p>City:</p>
+    <p class="name"></p>
+    <p>Temperature in Farenheit:</p>
+    <p class="temp"></p>
+    <p>Description:</p>
+    <p class="description"></p>
 
+    <script>
+      window.addEventListener('load', (event) => {
+
+      var name = document.querySelector('.name');
+      var temp = document.querySelector('.temp');
+      var desc = document.querySelector('.description');
+      fetch('https://api.openweathermap.org/data/2.5/weather?q=Chicago&appid=411a18eda248ba90a81d93a611ff246e')
+        .then(response => response.json())
+        .then(data => {
+          var nameValue=data['name'];
+          var tempValue =data['main']['temp'];
+          var descValue=data['weather'][0]['description'];
+
+          name.innerHTML= nameValue;
+          temp.innerHTML= ((tempValue)-273.15) *( 9/5) +(32)+('F');
+          desc.innerHTML= descValue;
+        })
+//(0K − 273.15) × 9/5 + 32
+        
+
+        });
+    </script>
+  </center>
+</div>
 
 <!-- screen number 2 for the project -->
     <div id="number2" class="screen">
