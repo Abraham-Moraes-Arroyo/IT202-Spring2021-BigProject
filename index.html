@@ -29,6 +29,10 @@
 		body {
 			margin: 0;
 		}
+
+		/* p{
+        padding: 70px;
+    } */
 	</style>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -110,8 +114,8 @@
     <!-- where all of my divs/ screens are going to be -->
     <div id="number1" class="screen">
       <!-- code dump from the first screen plan -->
-      <div class="card" style="width: 18rem;">
   <!-- drop the question here: -->
+  <center>
       <h5 class="card-title">Hello what is your name?</h5>
 
   <label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
@@ -122,6 +126,7 @@
   <!--The button part of the assignment  -->
     <button id="save" class="mdc-button mdc-button--raised">Enter</button>
 <!-- the Snackbar part of the assignment -->
+  </center>
     <div class="mdc-snackbar">
       <div class="mdc-snackbar__surface" role="status" aria-relevant="additions">
         <div class="mdc-snackbar__label" aria-atomic="false">
@@ -134,7 +139,6 @@
           </button>
         </div>
       </div>
-    </div>
 
     <!-- Include Dexie -->
       <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
@@ -170,40 +174,45 @@
     </div>
   <!-- the about me screen -->
       <div id="number4" class="screen">
-        <div class="alert alert-primary" role="alert">
-          Wow you took time to see who made the app?!! My hat's off to you
-        </div>
           <center>
-            <h5 class="card-title">Goal</h5>
-                  <p class="card-text">For this project, I built a Single-Page App that informs the user of the crime data that has occured in the city of Chicago, and around their location, as long as they are in Chicago. User's are also informed about the weather, based on their location. </p>
-            <div class="card" style="width: 18rem;">
-              
-              <div class="card-body">
-                <h5 class="card-title">Abraham Morales Arroyo</h5>
+            <h5 class="mdc-typography--headline4">Goal</h5>
+                  <p class="card-text mdc-typography--subtitle2">For this project, I built a Single-Page App that informs the user of the crime data that has occured in the city of Chicago, and around their location, as long as they are in Chicago. User's are also informed about the weather, based on their location. </p>
+              <!-- class="mdc-typography--subtitle2" -->
+                <h5 class="mdc-typography--headline4">Abraham Morales Arroyo</h5>
                 
-                <p class="card-text">He is a softmore at the University of Illinois at UIC and he is currently enrolled in IT 202. Want to get to know me better? Click on my personal page to do so.</p>
+                <p class="mdc-typography--subtitle2">He is a softmore at the University of Illinois at UIC and he is currently enrolled in IT 202. Want to get to know me better? Click on my personal page to do so.</p>
                 
+                <!-- here is where I am going to work with the button using the material os -->
+                <!-- <button >
                 <a href="https://abraham-moraes-arroyo.github.io/" class="btn btn-primary">Personal Page</a>
+                </button> -->
+               <div class="mdc-touch-target-wrapper">
+                <button class="mdc-button mdc-button--touch" >
+                  <span class="mdc-button__ripple"></span>
+                  <span class="mdc-button__label" >My web page</span>
+                  <span class="mdc-button__touch" href="https://abraham-moraes-arroyo.github.io/" class="btn btn-primary"></span>
+                </button>
               </div>
-            </div>
           </center>
       </div>
+
+
 <!-- screen number 5 for the projec the weather screen -->
 <div id="number5" class="screen">
   <div class="mdc-card">
   <div class="mdc-card__primary-action mdc-typography--headline5"  tabindex="0">
     <center>
       <div class="mdc-card mdc-card--outlined">
-    <h1>Current weather</h1>
+    <h1 class="mdc-typography--headline3">Current weather</h1>
     </div>
     <p class="mdc-typography--headline4">City:</p>
-    <p class="name"></p>
+    <p class="name mdc-typography--headline6"></p>
     <p class="mdc-typography--headline4">Temperature in Farenheit:</p>
-    <p class="temp"></p>
+    <p class="temp mdc-typography--headline6"></p>
     <p class="mdc-typography--headline4">Feels like:</p>
-    <p class="feels_like"></p>
+    <p class="feels_like mdc-typography--headline6"></p>
     <p class="mdc-typography--headline4">Description:</p>
-    <p class="description "></p>
+    <p class="description mdc-typography--headline6"></p>
     </center>
 
   </div>
@@ -243,24 +252,25 @@
 <!-- screen number 2 for the project -->
     <div id="number2" class="screen">
       <center>
- <div class="card" style="width: 18rem;">
-  <div class="card-body">
-  
-    <h5 class="card-title">Instructions</h5>
-    <p class="card-text">Welcome to Safe and Sound. Have you ever wanted to go to a place but not sure what is the safest route to get there, or have you recently planed on moving to the city of Chicago, but not sure what place is the safest for you and or your family? Well you got the right app at your disposal. Based on your location we have plotted the crimes onto a map, and based on your location you are able to see if the place where you are currently are at is either hot in crime or not. Once you have read this make sure to click on the stack icon towards the left of the screen and click on the tab named: "Getting to know you"</p>
-  </div>
-</div>
+
+    <h5 class="mdc-typography--headline4">Instructions</h5>
+    <p class="mdc-typography--subtitle2">Welcome to Safe and Sound. Have you ever wanted to go to a place but not sure what is the safest route to get there, or have you recently planed on moving to the city of Chicago, but not sure what place is the safest for you and or your family? Well you got the right app at your disposal. Based on your location we have plotted the crimes onto a map, and based on your location you are able to see if the place where you are currently are at is either hot in crime or not. Once you have read this make sure to click on the stack icon towards the left of the screen and click on the tab named: "Getting to know you"</p>
+
 </center>
 <!-- end of code dump for  -->
     </div>
 
     <div id="number3" class="screen">
      <!-- drop the map code here: -->
+     <center>
+       <p>Your position is on the map as a red dot. The map will display your location under the map with your location in latitude and longitude. the red pointers represents the crimes that have been documented. Ideally the more marks that your are around you area you may want to ignore those streets and neighboorhoods.</p>
+     </center>
       <div id="googleMap" style="width:100%;height:400px;"></div>
  <div id="currentLocation">
   </div>
 
 <script>
+  
 let map;
 function myMap() {
 var mapProp= {
