@@ -398,7 +398,12 @@ function showPosition(position) {
 
 
 </script>
-    
+<!-- this if for getting the user's names   -->
+    <script>
+    db.names.toArray().then(data => {
+    console.log(data);
+})
+    </script>
     <!-- this is for the web manifest -->
 	<script>
 		if ('serviceWorker' in navigator) {
