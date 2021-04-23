@@ -1,6 +1,7 @@
 let CACHE_NAME = 'my-site-cache-v1';
 let urlsToCache = [
-  './index.html' //modified to this project 2
+  // './index.html' //before
+  'index.html' //attempt number 1
 ];
 
 
