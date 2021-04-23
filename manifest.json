@@ -1,7 +1,7 @@
 {
   "scope": "./",
   "start_url": "./index.html",
-  "name": "Circle Hero",
+  "app_name": "Safe and Sound",
   "short_name": "CH",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
