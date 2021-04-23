@@ -1,6 +1,6 @@
 {
   "scope": "./",
-  "start_url": "./index.html",
+  "start_url": "index.html",
   "app_name": "Safe and Sound",
   "short_name": "CH",
   "theme_color": "#2196f3",
